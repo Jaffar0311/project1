@@ -2,23 +2,30 @@ package com.revature.model;
 
 public class User {
     private int UserId;
-    private String username;
-    private String password;
+
     private String firstName;
     private String lastName;
     private String email;
-    private UserRole role;
+    private String password;
+    private userType role;
 
     public User() {
     }
 
-    public User(int userId, String username, String password, String firstName, String lastName, String email, UserRole role) {
+    public User(int userId, String firstName, String lastName, String email, String password, userType role) {
         UserId = userId;
-        this.username = username;
-        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(String firstName, String lastName, String email, String password, userType role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
         this.role = role;
     }
 
@@ -28,22 +35,6 @@ public class User {
 
     public void setUserId(int userId) {
         UserId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getFirstName() {
@@ -70,11 +61,19 @@ public class User {
         this.email = email;
     }
 
-    public UserRole getRole() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public userType getRole() {
         return role;
     }
 
-    public void setRole(UserRole role) {
+    public void setRole(userType role) {
         this.role = role;
     }
 
@@ -82,11 +81,10 @@ public class User {
     public String toString() {
         return "User{" +
                 "UserId=" + UserId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", role=" + role +
                 '}';
     }
