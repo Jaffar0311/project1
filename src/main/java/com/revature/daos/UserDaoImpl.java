@@ -45,7 +45,6 @@ public class UserDaoImpl implements UserDao{
             Statement s = c.createStatement();) {
             ResultSet rs = s.executeQuery(sql);
 
-
             while (rs.next()) {
                 User user = new User();
 
@@ -58,7 +57,7 @@ public class UserDaoImpl implements UserDao{
                 String firstName = rs.getString("ers_first_name");
                 user.setFirstName(firstName);
 
-                String lastName = rs.getString("ers_first_name");
+                String lastName = rs.getString("ers_last_name");
                 user.setLastName(lastName);
 
                 String email = rs.getString("user_email");
@@ -68,8 +67,6 @@ public class UserDaoImpl implements UserDao{
                 typeOrdinal = typeOrdinal -1; //start index at position 1
                 UserType[] userTypes = UserType.values();
                 user.setType(userTypes[typeOrdinal]);
-
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
