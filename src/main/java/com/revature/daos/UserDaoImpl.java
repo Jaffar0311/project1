@@ -171,5 +171,24 @@ public class UserDaoImpl implements UserDao{
         }
         return null;
     }
+
+    @Override
+    public boolean deleteUser(int id) {
+        String sql = "delete from ers_users where id = ?; ";
+        try (Connection c = ConnectionUtil.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if(rowsAffected==1){
+                return true;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 
