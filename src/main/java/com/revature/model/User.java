@@ -1,40 +1,65 @@
 package com.revature.model;
 
 public class User {
-    private int UserId;
 
+    private int userId;
+    private String username;
+    private String password;
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
-    private userType role;
+    private UserType type;
 
     public User() {
     }
 
-    public User(int userId, String firstName, String lastName, String email, String password, userType role) {
-        UserId = userId;
+    public User(int userId, String firstName, String lastName, String email, String password, UserType type) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.type = type;
     }
 
-    public User(String firstName, String lastName, String email, String password, userType role) {
+    public User(String firstName, String lastName, String email, String password, UserType role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.type = type;
     }
 
     public int getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(int userId) {
-        UserId = userId;
+        this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public UserType getType() {
+        return type;
+    }
+
+    public void setType(UserType type) {
+        this.type = type;
     }
 
     public String getFirstName() {
@@ -61,31 +86,15 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public userType getRole() {
-        return role;
-    }
-
-    public void setRole(userType role) {
-        this.role = role;
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "UserId=" + UserId +
+                "UserId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", role=" + role +
+                ", type=" + type +
                 '}';
     }
 }
