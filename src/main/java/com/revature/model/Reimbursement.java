@@ -102,7 +102,7 @@ public class Reimbursement {
         this.description = description;
     }
 
-    public boolean isReimbursmentReceipt() {
+    public boolean ReimbursmentReceipt() {
         return reimbursmentReceipt;
     }
 
