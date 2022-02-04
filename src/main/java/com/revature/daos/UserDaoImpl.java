@@ -45,7 +45,6 @@ public class UserDaoImpl implements UserDao{
             Statement s = c.createStatement();) {
             ResultSet rs = s.executeQuery(sql);
 
-
             while (rs.next()) {
                 User user = new User();
 
@@ -58,7 +57,7 @@ public class UserDaoImpl implements UserDao{
                 String firstName = rs.getString("ers_first_name");
                 user.setFirstName(firstName);
 
-                String lastName = rs.getString("ers_first_name");
+                String lastName = rs.getString("ers_last_name");
                 user.setLastName(lastName);
 
                 String email = rs.getString("user_email");
@@ -68,8 +67,6 @@ public class UserDaoImpl implements UserDao{
                 typeOrdinal = typeOrdinal -1; //start index at position 1
                 UserType[] userTypes = UserType.values();
                 user.setType(userTypes[typeOrdinal]);
-
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -170,6 +167,25 @@ public class UserDaoImpl implements UserDao{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public boolean deleteUser(int id) {
+        String sql = "delete from ers_users where id = ?; ";
+        try (Connection c = ConnectionUtil.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if(rowsAffected==1){
+                return true;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }
 
