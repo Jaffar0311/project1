@@ -4,5 +4,5 @@ import com.revature.model.Reimbursement;
 
 public interface ReimbursementDAO {
 
-    int addReimbursement(Reimbursement rb);
+    boolean addReimbursement(Reimbursement reimbursement);
 }
