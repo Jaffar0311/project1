@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revature.model.ReimbursementTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-02-05T21:14:37" hostname="DESKTOP-416NV1M" time="0.042">
+  <properties/>
+  <testcase name="isReimbusementSubmitted()" classname="com.revature.model.ReimbursementTest" time="0.026"/>
+  <testcase name="reimbursmentReceipt()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <testcase name="getUser_id()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <testcase name="getReimbursementAmount()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <testcase name="isReimbusementResolved()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <testcase name="getReimbursementStatus()" classname="com.revature.model.ReimbursementTest" time="0.002"/>
+  <testcase name="getDescription()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <testcase name="getReimbursementType()" classname="com.revature.model.ReimbursementTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
