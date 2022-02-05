@@ -8,11 +8,16 @@ import com.revature.model.ReimbursementType;
 
 public class ReimbursementServices {
 
-    private ReimbursementDAO reimbDao = new ReimbursementDaoImpl();
+   private ReimbursementDAO rd = new ReimbursementDaoImpl();
 
-    public boolean addReimbursement() {
 
-        Reimbursement reimb = new Reimbursement(1, ReimbursementType.FOOD, ReimbursementStatus.PENDING, 100.0, true, false, "food", true);
-        return reimbDao.addReimbursement(reimb);
+
+    public boolean addReimbursement(int userId, ReimbursementType rt, ReimbursementStatus rs, double ra, boolean rsub, boolean rr, String des, boolean rrecp) {
+
+        Reimbursement reimb = new Reimbursement(userId, rt, rs, ra, rsub, rr, des, rrecp);
+
+       return rd.addReimbursement(reimb);
     }
+
+
 }
