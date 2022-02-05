@@ -16,5 +16,9 @@ public class ConnectionUtil {
         String password = System.getenv("DB_PASS");
         return DriverManager.getConnection(url,username, password);
 
+
     }
+
+
+
 }

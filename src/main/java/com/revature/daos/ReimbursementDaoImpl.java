@@ -10,32 +10,28 @@ import java.sql.SQLException;
 
 public class ReimbursementDaoImpl implements ReimbursementDAO {
     @Override
-    public int addReimbursement(Reimbursement reimbursement) {
-        String sql = "insert into ers_reimbursement (users_id, reimb_type, status_type, reimb_amount, reimb_submitted, reimb_resolved, reimb_description, reimb_receipt ) values (?,?,?,?,?,?,?,?,?)";
-        try(Connection conn = ConnectionUtil.getConnection()){
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, reimbursement.getReimbursementId());
-            ps.setInt(2, reimbursement.getUser_id());
-            ps.setInt(3, reimbursement.getReimbursementType().ordinal());
-            ps.setInt(4, reimbursement.getReimbursementStatus().ordinal());
-            ps.setDouble(5, reimbursement.getReimbursementAmount());
-            ps.setBoolean(6, reimbursement.isReimbusementSubmitted());
-            ps.setBoolean(7, reimbursement.isReimbusementResolved());
-            ps.setString(8,reimbursement.getDescription());
-            ps.setBoolean(9,reimbursement.ReimbursmentReceipt());
+    public boolean addReimbursement(Reimbursement reimbursement) {
+        String sql = "insert into ERS_REIMBURSEMENT (users_id, reimb_type, status_type, reimb_amount, reimb_submitted, reimb_resolved, reimb_description, reimb_receipt ) values (?,?,?,?,?,?,?,?)";
+        try (Connection conn = ConnectionUtil.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);){
 
-            ps.executeQuery();
+            ps.setInt(1, reimbursement.getUser_id());
+            ps.setInt(2, reimbursement.getReimbursementType().ordinal());
+            ps.setInt(3, reimbursement.getReimbursementStatus().ordinal());
+            ps.setDouble(4, reimbursement.getReimbursementAmount());
+            ps.setBoolean(5, reimbursement.isReimbusementSubmitted());
+            ps.setBoolean(6, reimbursement.isReimbusementResolved());
+            ps.setString(7, reimbursement.getDescription());
+            ps.setBoolean(8, reimbursement.ReimbursmentReceipt());
 
-
-            ResultSet keys = ps.getGeneratedKeys();
-            if(keys.next()) {
-                System.out.println("successfully added the reimbursement");
-                return keys.getInt(1);
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected == 1) {
+                return true;
             }
-        }
-        catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
+        return false;
     }
 }
