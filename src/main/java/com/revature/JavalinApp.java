@@ -1,11 +1,11 @@
 package com.revature;
 
+import com.revature.controllers.UserController;
+import io.javalin.Javalin;
+import static io.javalin.apibuilder.ApiBuilder.*;
 import com.revature.controllers.AppExceptionHandler;
 import com.revature.controllers.AuthController;
-import com.revature.controllers.UserController;
 import com.revature.util.LoggingUtil;
-import io.javalin.Javalin;
-
 import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class JavalinApp {
@@ -50,6 +50,4 @@ public class JavalinApp {
     public void start(int port){
         app.start(port);
         }
-
-
 }

@@ -11,10 +11,16 @@ public class ConnectionUtil {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        String url = "jdbc:postgresql://34.67.25.246:5432/postgres";
+
+        String url = System.getenv("DB_URL");
         String username = System.getenv("DB_USER");
         String password = System.getenv("DB_PASS");
-        return DriverManager.getConnection(url,username, password);
+
+        return DriverManager.getConnection(url ,username, password);
+
 
     }
+
+
+
 }
