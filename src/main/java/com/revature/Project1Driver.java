@@ -9,11 +9,12 @@ import com.revature.util.ConnectionUtil;
 public class Project1Driver {
     public static void main(String[] args) {
 
-        ReimbursementServices service = new ReimbursementServices();
+        /*ReimbursementServices service = new ReimbursementServices();
 
-       service.addReimbursement(1, ReimbursementType.FOOD, ReimbursementStatus.PENDING,100.0,true, false, "food",true);
+       service.addReimbursement(1, ReimbursementType.FOOD, ReimbursementStatus.PENDING,100.0,true, false, "food",true);*/
 
-
+        JavalinApp app = new JavalinApp();
+        app.start(8080);
 
 
 

@@ -11,10 +11,12 @@ public class ConnectionUtil {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         String url = System.getenv("DB_URL");
         String username = System.getenv("DB_USER");
         String password = System.getenv("DB_PASS");
-        return DriverManager.getConnection(url,username, password);
+
+        return DriverManager.getConnection(url ,username, password);
 
 
     }
