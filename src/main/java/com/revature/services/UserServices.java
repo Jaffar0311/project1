@@ -9,6 +9,7 @@ public class UserServices {
 
     private final UserDao userDao = new UserDaoImpl();
 
+
     public boolean createUser(User user) {
         user.setEmail(user.getEmail().toLowerCase());
         return userDao.createUser(user);
@@ -33,4 +34,8 @@ public class UserServices {
     public User getUserByUsernameAndPassword(String username, String pass){
         return userDao.getUserByUsernameAndPassword(username,pass);
     }
+
+
+
+
 }

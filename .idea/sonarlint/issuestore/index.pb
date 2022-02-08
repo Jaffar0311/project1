@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 ^
 .src/main/java/com/revature/Project1Driver.java,7\b\7b712485823d2755a4b5a0e07c99c5ea8beafd1d
 c
@@ -7,3 +8,7 @@ e
 5src/main/java/com/revature/services/UserServices.java,e\6\e691c79a5dde55a7367ed515427d7b558cd6adb9
 Z
 *src/main/java/com/revature/model/User.java,5\f\5fcc915fdbcbc6d8ffe71f2816a056937af9f7d9
+=======
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+>>>>>>> ams
