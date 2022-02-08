@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface UserDao {
 
-    public boolean createUser(User user);
-    //public List<User> getAllUsers();
+    public boolean createUser(User user); //Admin only
+    public List<User> getAllUsers(); //Admin only
     public User getUserById(int id);
     public boolean updateUsers(User user);
     public User getUserByUsernameAndPassword(String username, String password);
